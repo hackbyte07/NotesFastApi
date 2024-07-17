@@ -15,4 +15,4 @@ def index():
 
 app.include_router(notes_router.router)
 
-uvicorn.run(app=app)
+uvicorn.run(app=app) 
