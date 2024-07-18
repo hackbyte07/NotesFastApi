@@ -13,6 +13,7 @@ Base.metadata.create_all(bind=engine)
 def index():
     return {'Welcome to notes'}
 
+
 app.include_router(notes_router.router)
 
-uvicorn.run(app=app) 
+uvicorn.run(app=app, port=1111) 
