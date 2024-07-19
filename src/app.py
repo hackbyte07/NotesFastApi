@@ -4,13 +4,12 @@ import uvicorn
 from databases.database import  engine, Base
 from routers import notes_router, users_router
 
-
 app = FastAPI(title='Notes api', version='0.1.0')
 load_dotenv('.env')
 
 Base.metadata.create_all(bind=engine)
 
-
+ 
 @app.get('/')
 def index():
     return {'Welcome to notes'}

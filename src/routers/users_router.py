@@ -1,13 +1,11 @@
 import os
 from fastapi import APIRouter, Depends, HTTPException, status
-
 from databases.database import get_db
 from models import user_model
 from sqlalchemy.orm import Session
-from passlib.context import CryptContext
-
 from schemas import users_schema
 from utils.auth_utils import genrate_token
+from passlib.context import CryptContext
 
 
 router = APIRouter(tags=['users'], prefix='/users')
