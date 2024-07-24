@@ -5,6 +5,6 @@ from databases.database import Base
 class Notes(Base):
     __tablename__ = 'notes'
     __allow_unmapped__ = True
-    id= Column(Integer, primary_key=True, index=True)
+    id= Column(Integer, primary_key=True, index=True, autoincrement=True)
     title= Column(String)
     description= Column(String)

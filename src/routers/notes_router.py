@@ -52,7 +52,7 @@ def update_notes(id: int, request: notes_schema.Notes, db: Session = Depends(get
     notes = db.query(notes_model.Notes).filter(notes_model.Notes.id == id)
     if not notes.first():
         raise HTTPException(status_code=400, detail='No note found')
-    notes.update(request.model_dump())
+    notes.update(**request.model_dump())
     db.commit()
     return {
         'message': 'note updated' 
